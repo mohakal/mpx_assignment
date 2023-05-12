@@ -1,5 +1,5 @@
 Entry Point: index.php
-For Database Connection need to update database.php though it will run without db connection. For checking saearch feature need db connection.
+For Database Connection need to update database.php though it will run without db connection. For checking search feature need db connection.
 Status Code Used:
 100 - DB Error
 203 - No Records Found
