@@ -1,0 +1,22 @@
+Entry Point: index.php
+For Database Connection need to update database.php though it will run without db connection. For checking saearch feature need db connection.
+Status Code Used:
+100 - DB Error
+203 - No Records Found
+200 - all rows in message index
+400 - missing parameters or not used post method
+For DB setup
+Create DB with name "mpx"
+FOr create table
+CREATE TABLE `data` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `paragraph` text,
+  `replacement` varchar(200) DEFAULT NULL,
+  `replaced_phrases` text,
+  `after_replacement` text,
+  PRIMARY KEY (`id`),
+  FULLTEXT KEY `SearchByPharase` (`replaced_phrases`)
+)
+
+
+
