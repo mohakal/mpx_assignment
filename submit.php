@@ -6,8 +6,8 @@ $reposne['message'] = "Error! Method need to be POST and required parameters are
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!empty($_POST["paragraph"]) && !empty($_POST["replacement"])) {
         $paragraph = $_POST["paragraph"];
-        $replacement = $_POST["replacement"];
-        $pattern = '/(["\'])(.*?)\1/';
+        $replacement = '$1'.$_POST["replacement"].'$5';
+        $pattern = '/(\s|,|\\\\)(["\'])([^"\']*)(["\'])(\s|,|$|.)/';
         preg_match_all($pattern, $paragraph, $matches);
         $replacedSringPrases = $matches[0];
         $result = preg_replace($pattern, $replacement, $paragraph);
